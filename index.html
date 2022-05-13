@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+<title>Munir e Cesar</title>
+</head>
+<link rel="stylesheet" href="style.css" />
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-database.js"></script>
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyCoRASjervmBZz-E9VFqyzSo8qIa_xU8oA",
+  authDomain: "lampada-cf669.firebaseapp.com",
+  databaseURL: "https://lampada-cf669-default-rtdb.firebaseio.com",
+  projectId: "lampada-cf669",
+  storageBucket: "lampada-cf669.appspot.com",
+  messagingSenderId: "895224582552",
+  appId: "1:895224582552:web:712b21aeb18e9476e85bed",
+  measurementId: "G-H61RZ13L7V"
+  }
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig)
+  // var database = firebase.database()
+  function ledOn() {
+      firebase.database().ref('SALA').set({
+        estado: 'LIGADA'
+      })
+    }
+    function ledOff() {
+      firebase.database().ref('SALA').set({
+        estado: 'DESLIGADA'
+      })
+    }
+  </script>
+  <script src="app.js" defer></script>
+<body>
+    <header>
+      <img src="ujc.PNG" width="120" />
+      <h1>Universidade Joaquim Chissano</h1>
+      <h1>TME Education</h1>
+      <h2>Controle remoto de iluminacao</h2>
+      <h3> Nosso primeiro Teste</h3>
+      <p> No nosso primeiro paragrafo, não escrevemos nada de mais.</p>
+      
+    </header>
+   
+    <fieldset>
+      <legend>Sala</legend>
+      <div>
+        <button class="led-on" onclick="ledOn()">Ligar</button>
+        <button class="led-off" onclick="ledOff()">Desligar</button>
+      </div>
+    </fieldset>    
+    <footer>
+      <h3> Nosso site Oficial </h3>
+      <a href="www.facebook.com"> este é o site para acessar aos nossos arquivos</a>
+      <p>
+        <strong> Munir e Cesar </strong>
+      </p>
+    </footer>
+</body>
+</html>
